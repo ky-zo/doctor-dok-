@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import TopHeader from "@/components/top-header";
 // import { ChatContextProvider } from "@/contexts/chat-context";
 import { ConfigContextProvider } from "@/contexts/config-context";
-import {  DatabaseContextProvider } from "@/contexts/db-context";
+import { DatabaseContextProvider } from "@/contexts/db-context";
 import { FolderContextProvider } from "@/contexts/folder-context";
 //import { RecordContextProvider } from "@/contexts/record-context";
 import AuthorizationGuard from "@/components/authorization-guard";
@@ -36,7 +36,7 @@ export default function FolderPad() {
                   <FolderContextProvider>
                     <RecordContextProvider>
                       <KeyContextProvider>
-                        <div>
+                        <div className="flex flex-col min-h-[100svh]">
                           <TopHeader />
                           <TermsPopup />
                           <RecordsWrapper />
@@ -46,11 +46,11 @@ export default function FolderPad() {
                     </RecordContextProvider>
                   </FolderContextProvider>
                 </ChatContextProvider>
-              </AuthorizationGuard> 
+              </AuthorizationGuard>
             </TermsContextProvider>
           </AuditContextProvider>
-         </ConfigContextProvider>
-        </SaaSContextProvider>
-      </DatabaseContextProvider>
+        </ConfigContextProvider>
+      </SaaSContextProvider>
+    </DatabaseContextProvider>
   );
 }
